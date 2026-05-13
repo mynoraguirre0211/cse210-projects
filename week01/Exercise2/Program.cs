@@ -31,7 +31,19 @@ class Program
             letter = "F";
         }
 
-        Console.WriteLine($"Your letter grade is: {letter}");
+        int lastNumber = gradePercentage % 10;
+        string sign = "";
+
+        if (lastNumber >= 7 && letter != "A" && letter != "F")
+        {
+            sign = "+";
+        }
+        else if (lastNumber <= 3 && letter != "F")
+        {
+            sign = "-";
+        }
+
+        Console.WriteLine($"Your letter grade is: {letter}{sign}");
 
         if (gradePercentage >= 70)
         {
